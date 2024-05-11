@@ -1,0 +1,26 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block title %} edit movie django {% endblock %}
+{% block content %}
+<center>
+<h1> Edit Movie Details </h1><br>
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table>
+        {{form.as_table}}
+    </table>
+
+    <input type="submit">
+</form>
+</center>
+{% endblock %}
+
+<!--pip install django-crispy-forms
+pip install crispy-bootstrap5
+
+-->

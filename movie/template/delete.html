@@ -1,0 +1,25 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %} delete
+
+{% endblock %}
+
+{% block content %}
+
+{# {{ form }} it is the way to display form in html page from django it will not have any style or design #}
+<form method="POST" >
+    {% csrf_token %}
+<p> Are you sure you want to delete ?</p>
+
+
+    <input type="submit">
+</form>
+{% endblock %}
+
+<!--pip install django-crispy-forms
+pip install crispy-bootstrap5
+
+-->

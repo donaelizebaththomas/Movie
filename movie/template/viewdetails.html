@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} detail page {% endblock %}
+{% block content %}
+<h1> <center> Movie details</center></h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            {% if m.image %}
+                <!-- Display image -->
+                <img src="{{ m.image.url }}" width="300px" height="500px" class="img-fluid" alt="picture of flower">
+            {% endif %}
+        </div>
+        <div class="col-md-6">
+            <div class="details">
+                <h2>{{ m.name }}</h2>
+                <p>Year: {{ m.year }}</p>
+                <p>Description: {{ m.description }}</p>
+
+                <p> <a href="{% url 'edit' m.id %}" class="btn btn-warning">Update</a>
+                <a href="{% url 'delete' m.id %}" class="btn btn-danger">Delete</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
